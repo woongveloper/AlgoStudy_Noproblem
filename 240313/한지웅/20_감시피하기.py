@@ -13,7 +13,7 @@ combinations list만큼 모두 진행했을 때에도 학생이 탐지되지 않
 '''
 from copy import deepcopy
 from itertools import combinations
-from collections import deque
+# from collections import deque
 
 di = [-1,1,0,0] #상하좌우
 dj = [0,0,-1,1]

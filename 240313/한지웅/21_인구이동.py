@@ -80,16 +80,15 @@ def bfs():
                     now_j = Qj.popleft()
             else:
                 continue
-    return v
 
 def check_day():
     cnt = 0
     tmp = deepcopy(matrix)
     while True:
-        after_move = bfs()
-        if tmp == after_move:
-            return cnt-1
-        tmp = deepcopy(after_move)
+        bfs()
+        if tmp == matrix:
+            return cnt
+        tmp = deepcopy(matrix)
         cnt += 1
 
 print(check_day())

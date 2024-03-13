@@ -20,7 +20,7 @@ dj = [1, 0, -1, 0, 1, -1, -1, 1]
 N = int(input())    # 보드판 크기 입력
 
 arr = [[0] * N for _ in range(N)]
-
+  
 counts = 0
 
 for i in range(N):
@@ -38,6 +38,7 @@ for i in range(N):
                             if 0 <= ni < N and 0 <= nj < N:
                                 if arr[ni][nj] == 1:
                                     break
+print(arr)  # 왜 다 0으로 채워지지?
 
 for i in range(N):
     for j in range(N):

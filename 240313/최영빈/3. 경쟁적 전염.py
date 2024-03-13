@@ -34,30 +34,56 @@ for i in range(N):
     for j in range(N):
         if arr[i][j] != 0:
             queue.append(arr[i][j]) # 큐에 해당 바이러스 집어넣기
-            queue.sort()            # 낮은 번호 바이러스부터 나와야하니까 오름차순로 만들어야 함
+
+queue.sort()            # 낮은 번호 바이러스부터 나와야하니까 오름차순로 만들어야 함
 
 # print(arr)      # [[1, 0, 2], [0, 0, 0], [3, 0, 0]]
-# print(queue)    # [1, 2, 3]
+print(queue)    # [1, 2, 3]
 
-            
+
+## 틀린코드2        
 time = 0    # 1초 지날때마다 시간 계산할 변수
 
-for i in range(N):
-    for j in range(N):
-        if time == S:   # S초가 되면 정지하라
-            break
-        for k in range(4):
-            ni = i + di[k]
-            nj = j + dj[k]
-            if 0 <= ni < N and 0 <= nj < N:
-                if arr[ni][nj] == 0:
-                    arr[ni][nj] = queue[0]
-                    time += 1
+while queue:
+    virus = queue.pop(0)
+    if time == S:
+        break
+    for k in range(4):
+        ni = i + di[k]
+        nj = j + dj[k]
+        if 0 <= ni < N and 0 <= nj < N:
+            if arr[ni][nj] == 0:
+                arr[ni][nj] = virus
+                time += 1
+print(arr[X-1][Y-1])
 print(arr)
 
-print(arr[X-1][Y-1])
+# 이거는 3번 바이러스만 증식함
+# 테케는 맞는데 백준은 틀림
+
+
+
+
+
+
+
+## 틀린 코드
+# for i in range(N):
+#     for j in range(N):
+#         if time == S:   # S초가 되면 정지하라
+#             break
+#         for k in range(4):
+#             ni = i + di[k]
+#             nj = j + dj[k]
+#             if 0 <= ni < N and 0 <= nj < N:
+#                 if arr[ni][nj] == 0:
+#                     arr[ni][nj] = queue[0]
+#                     time += 1
+# print(arr)
+# print(arr[X-1][Y-1])
 
 # 위에 델타에서 바이러스 1번만 증식하고 2, 3번은 증식도 안함
+# 두번째 테케는 또 1만 무한 증식함
 
 
 

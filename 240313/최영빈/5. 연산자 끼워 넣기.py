@@ -18,7 +18,7 @@ for i in num_list:
     if nanugi > 0:
         i // (i+1)
 
-        
+          
 
 
 

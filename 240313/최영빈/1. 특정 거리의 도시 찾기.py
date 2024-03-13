@@ -51,16 +51,19 @@ while queue:    # 큐가 비어있지 않은 동안 무한 반복
             distance[i] = distance[now] + 1 # 해당 도시까지 거리에 +1을 하고 
             queue.append(i)                 # 큐에 도시 저장
 
-
+result = False
 for i in range(1, N + 1):   # 모든 거리를 순회하면서
     if distance[i] == K:    # K와 같다면 출력
         print(i)
-    else:
-        print(-1)
+        result = True
+
+if result == False:
+    print(-1)   
+        
 
 
-
-    
+# 이게 4만 나와야 하는데 -1 -1 -1 4가 나온다. # else문을 없애면 또 -1 나와야할때 아예 안나온다...
+## 백준 시간 초과
 
 '''
 4 4 2 1

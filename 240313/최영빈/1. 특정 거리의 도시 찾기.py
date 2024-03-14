@@ -45,11 +45,12 @@ queue = []          # 빈 큐 만들기
 queue.append(X)     # 시작도시 추가하기
 
 while queue:    # 큐가 비어있지 않은 동안 무한 반복
-    now = queue.pop(0)  # 현재 도시를 큐에서 꺼내오기
+    now = queue.pop(0)  # 현재 도시를 큐에서 꺼내오기 #팝제로가 시간이 엄청 들어서 큐 부분을 덱큐로 바꾼다.!!!!!!!!!!
     for i in arr[now]:  # 현재 도시와 연결된 도시들을 반복순회
         if distance[i] == -1:   # 방문한 적이 없는 도시라면
             distance[i] = distance[now] + 1 # 해당 도시까지 거리에 +1을 하고 
             queue.append(i)                 # 큐에 도시 저장
+          
 
 result = 0
 for i in range(1, N + 1):   # 모든 거리를 순회하면서

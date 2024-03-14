@@ -51,13 +51,13 @@ while queue:    # 큐가 비어있지 않은 동안 무한 반복
             distance[i] = distance[now] + 1 # 해당 도시까지 거리에 +1을 하고 
             queue.append(i)                 # 큐에 도시 저장
 
-result = False
+result = 0
 for i in range(1, N + 1):   # 모든 거리를 순회하면서
     if distance[i] == K:    # K와 같다면 출력
         print(i)
-        result = True
+        result += 1
 
-if result == False:
+if result == 0:
     print(-1)   
         
 
